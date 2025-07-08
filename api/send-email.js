@@ -31,7 +31,7 @@ export default async function handler(req, res) {
     console.log('Tentative d\'envoi email...')
     const { data, error } = await resend.emails.send({
       from: 'onboarding@resend.dev',
-      to: 'nrb5867@gmail.com',
+      to: 'brntrtr@icloud.com',
       subject: `Nouveau message de ${nom} via le formulaire`,
       html: `
         <h2>Nouveau message du formulaire de contact</h2>
