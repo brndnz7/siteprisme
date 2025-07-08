@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { gsap } from 'gsap'
-import { ExternalLink, Github, X, Filter, Utensils, Coffee, ShoppingCart, Store } from 'lucide-react'
+import { ExternalLink, X, Filter, Utensils, Coffee, ShoppingCart, Store } from 'lucide-react'
 import { Dialog, DialogContent } from './ui/dialog'
 import portfolioData from '@/data/portfolio.json'
 
@@ -59,11 +59,6 @@ export default function Portfolio() {
       })
     }
   }, [filteredProjects])
-
-  const openModal = (project: any) => {
-    setSelectedProject(project)
-    setIsModalOpen(true)
-  }
 
   const closeModal = () => {
     setIsModalOpen(false)
