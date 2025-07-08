@@ -74,17 +74,24 @@ export default function ContactForm() {
     setIsSubmitting(true)
 
     try {
-      // Envoi des données vers notre API Resend
-      const response = await fetch('/api/send-email', {
-        method: 'POST',
+      const response = await fetch("https://formspree.io/f/mjkrqeba", {
+        method: "POST",
         headers: {
-          'Content-Type': 'application/json',
+          "Accept": "application/json",
+          "Content-Type": "application/json"
         },
-        body: JSON.stringify(formData)
+        body: JSON.stringify({
+          nom: formData.nom,
+          email: formData.email,
+          telephone: formData.telephone,
+          entreprise: formData.entreprise,
+          typeProjet: formData.typeProjet,
+          description: formData.description
+        })
       })
 
       if (!response.ok) {
-        throw new Error('Erreur lors de l\'envoi')
+        throw new Error("Erreur lors de l'envoi")
       }
       
       toast({
@@ -165,6 +172,7 @@ export default function ContactForm() {
                   </Label>
                   <Input
                     id="nom"
+                    name="nom"
                     value={formData.nom}
                     onChange={(e) => handleInputChange('nom', e.target.value)}
                     placeholder="Votre nom et prénom"
@@ -185,6 +193,7 @@ export default function ContactForm() {
                   </Label>
                   <Input
                     id="email"
+                    name="email"
                     type="email"
                     value={formData.email}
                     onChange={(e) => handleInputChange('email', e.target.value)}
@@ -206,6 +215,7 @@ export default function ContactForm() {
                   </Label>
                   <Input
                     id="telephone"
+                    name="telephone"
                     value={formData.telephone}
                     onChange={(e) => handleInputChange('telephone', e.target.value)}
                     placeholder="06 12 34 56 78"
@@ -226,6 +236,7 @@ export default function ContactForm() {
                   </Label>
                   <Input
                     id="entreprise"
+                    name="entreprise"
                     value={formData.entreprise}
                     onChange={(e) => handleInputChange('entreprise', e.target.value)}
                     placeholder="Nom de votre entreprise"
@@ -238,6 +249,7 @@ export default function ContactForm() {
               <div className="space-y-2">
                 <Label className="font-medium text-foreground">Type de projet *</Label>
                 <Select 
+                  name="typeProjet"
                   value={formData.typeProjet} 
                   onValueChange={(value) => handleInputChange('typeProjet', value)}
                 >
@@ -267,6 +279,7 @@ export default function ContactForm() {
                 </Label>
                 <Textarea
                   id="description"
+                  name="description"
                   value={formData.description}
                   onChange={(e) => handleInputChange('description', e.target.value)}
                   placeholder="Décrivez votre projet : objectifs, fonctionnalités souhaitées, cible, contraintes particulières..."
