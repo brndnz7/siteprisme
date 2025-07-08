@@ -1,9 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ExternalLink, Github, X, Filter, Utensils, Coffee, ShoppingCart, Store } from 'lucide-react'
-import { Button } from './ui/button'
 import { Dialog, DialogContent } from './ui/dialog'
 import portfolioData from '@/data/portfolio.json'
 
@@ -206,18 +204,6 @@ export default function Portfolio() {
                           Voir le site
                         </a>
                       )}
-                      {project.github && (
-                        <a 
-                          href={project.github} 
-                          target="_blank" 
-                          rel="noopener noreferrer"
-                          className="bg-slate-700/80 hover:bg-slate-600 text-slate-300 px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
-                          onClick={(e) => e.stopPropagation()}
-                        >
-                          <Github className="w-4 h-4 mr-2 inline" />
-                          Code source
-                        </a>
-                      )}
                     </div>
                   </div>
                 </div>
@@ -336,17 +322,6 @@ export default function Portfolio() {
                       >
                         <ExternalLink className="w-4 h-4 mr-2" />
                         Voir le site
-                      </a>
-                    )}
-                    {selectedProject.github && (
-                      <a 
-                        href={selectedProject.github} 
-                        target="_blank" 
-                        rel="noopener noreferrer"
-                        className="btn-outline-professional"
-                      >
-                        <Github className="w-4 h-4 mr-2" />
-                        Code source
                       </a>
                     )}
                   </div>

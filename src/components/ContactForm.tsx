@@ -1,7 +1,6 @@
 import { useState } from 'react'
 import { motion } from 'framer-motion'
-import { Send, CheckCircle, AlertCircle, MessageSquare, FileText, Rocket } from 'lucide-react'
-import { Button } from './ui/button'
+import { Send, AlertCircle, MessageSquare, FileText, Rocket } from 'lucide-react'
 import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select'

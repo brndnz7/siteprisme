@@ -1,6 +1,5 @@
 import { useEffect } from 'react'
 import { gsap } from 'gsap'
-import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
 import Expertises from './components/Expertises'
@@ -10,9 +9,6 @@ import ContactForm from './components/ContactForm'
 import Footer from './components/Footer'
 import { ThemeProvider } from './components/ThemeProvider'
 import { Toaster } from './components/ui/toaster'
-
-// Register GSAP plugins
-gsap.registerPlugin(ScrollTrigger)
 
 function App() {
   useEffect(() => {

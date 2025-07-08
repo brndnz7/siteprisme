@@ -6,7 +6,6 @@ import {
   Code, 
   Rocket, 
   CheckCircle,
-  ArrowRight
 } from 'lucide-react'
 
 const processSteps = [
