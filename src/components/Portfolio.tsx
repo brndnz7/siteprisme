@@ -6,6 +6,9 @@ import { ExternalLink, X, Filter, Utensils, Coffee, ShoppingCart, Store } from '
 import { Dialog, DialogContent } from './ui/dialog'
 import portfolioData from '@/data/portfolio.json'
 
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger)
+
 const categories = [
   { name: 'Fast Food', value: 'fast-food', icon: Utensils },
   { name: 'Restaurant', value: 'restaurant', icon: Utensils },

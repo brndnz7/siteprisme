@@ -15,6 +15,9 @@ import {
   MessageSquare
 } from 'lucide-react'
 
+// Register ScrollTrigger plugin
+gsap.registerPlugin(ScrollTrigger)
+
 const expertises = [
   {
     id: 'fast-food',
