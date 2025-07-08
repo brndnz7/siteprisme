@@ -1,6 +1,7 @@
 import { useState, useRef, useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { gsap } from 'gsap'
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import { ExternalLink, X, Filter, Utensils, Coffee, ShoppingCart, Store } from 'lucide-react'
 import { Dialog, DialogContent } from './ui/dialog'
