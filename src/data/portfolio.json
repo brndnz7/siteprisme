@@ -1,0 +1,97 @@
+{
+  "projects": [
+    {
+      "id": "1",
+      "title": "Burger Palace",
+      "client": "Burger Palace",
+      "category": "fast-food",
+      "description": "Site de commande en ligne pour chaîne de burgers premium avec menu interactif, géolocalisation et système de livraison en temps réel.",
+      "image": "/img/Fastfood.png",
+      "url": "https://fast-food-exemple.vercel.app/",
+      "technologies": ["React", "Node.js", "Stripe", "MongoDB"],
+      "year": "2024",
+      "status": "Livré",
+      "testimonial": {
+        "text": "Un site professionnel qui correspond parfaitement à nos besoins. L'équipe a su comprendre nos enjeux business.",
+        "author": "Marie Dubois",
+        "role": "Manager Burger Palace"
+      }
+    },
+    {
+      "id": "2",
+      "title": "Le Palais Doré",
+      "client": "Le Palais Doré",
+      "category": "restaurant",
+      "description": "Site vitrine élégant pour restaurant gastronomique trois étoiles Michelin avec réservation en ligne, présentation du chef et galerie photos immersive.",
+      "image": "/img/Restaurant.png",
+      "url": "https://restaurant-pink-nine.vercel.app/",
+      "technologies": ["Gatsby", "Contentful", "Calendly", "GSAP"],
+      "year": "2024",
+      "status": "Livré",
+      "testimonial": {
+        "text": "Un site qui reflète l'élégance de notre établissement avec une approche technique moderne.",
+        "author": "Chef Philippe Dubois",
+        "role": "Chef Exécutif Le Palais Doré"
+      }
+    },
+    {
+      "id": "3",
+      "title": "Coffee Corner",
+      "client": "Coffee Corner",
+      "category": "cafe",
+      "description": "Site moderne pour coffee shop avec système de commande à emporter, présentation des produits et réservation d'événements.",
+      "image": "/img/Cafe.png",
+      "url": "https://cafe-two-iota.vercel.app/",
+      "technologies": ["React", "Sanity", "Stripe", "PWA"],
+      "year": "2024",
+      "status": "Livré",
+      "testimonial": {
+        "text": "Interface claire et navigation intuitive. L'équipe a bien cerné nos besoins spécifiques.",
+        "author": "Emma Wilson",
+        "role": "Propriétaire Coffee Corner"
+      }
+    },
+    {
+      "id": "4",
+      "title": "GreenLife Off",
+      "client": "GreenLife Off",
+      "category": "e-commerce",
+      "description": "Boutique en ligne spécialisée dans les produits écologiques et durables avec gestion avancée des stocks et programme de fidélité intégré.",
+      "image": "/img/Shopify.png",
+      "url": "https://greenlifeoff.com/",
+      "technologies": ["React", "Shopify", "GraphQL", "Tailwind"],
+      "year": "2024",
+      "status": "Livré",
+      "stack": "shopify",
+      "testimonial": {
+        "text": "Excellent travail d'équipe et respect des délais. Le site répond parfaitement à nos attentes.",
+        "author": "Sophie Laurent",
+        "role": "Directrice GreenLife Off"
+      }
+    },
+    {
+      "id": "5",
+      "title": "EcoStay Global",
+      "client": "EcoStay Global",
+      "category": "e-commerce",
+      "description": "Plateforme de réservation d'hébergements écologiques avec comparateur intégré, filtres avancés et système de recommandations personnalisées.",
+      "image": "/img/Wordpress.png",
+      "url": "https://ecostay-global.com/",
+      "technologies": ["WordPress", "WooCommerce", "Custom Development", "TypeScript"],
+      "year": "2024",
+      "status": "Livré",
+      "stack": "wordpress",
+      "testimonial": {
+        "text": "Solution technique robuste et évolutive. Le développement a été mené avec rigueur et professionnalisme.",
+        "author": "Jean-Pierre Martin",
+        "role": "CEO EcoStay Global"
+      }
+    }
+  ],
+  "stats": {
+    "sitesLivres": 30,
+    "clientsSatisfaits": 99,
+    "anneesExperience": 5,
+    "technologiesMaitrisees": 20
+  }
+} 
