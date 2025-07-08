@@ -74,8 +74,18 @@ export default function ContactForm() {
     setIsSubmitting(true)
 
     try {
-      // Simulation d'envoi d'email (remplacer par EmailJS ou votre service)
-      await new Promise(resolve => setTimeout(resolve, 2000))
+      // Envoi des données vers notre API Resend
+      const response = await fetch('/api/send-email', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      })
+
+      if (!response.ok) {
+        throw new Error('Erreur lors de l\'envoi')
+      }
       
       toast({
         title: "Message envoyé !",
