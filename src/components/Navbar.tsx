@@ -54,7 +54,7 @@ export default function Navbar() {
   return (
     <nav className={`fixed top-0 w-full z-50 transition-all duration-300 ${
       scrolled 
-        ? 'bg-slate-900/95 backdrop-blur-lg border-b border-violet-500/20 shadow-lg shadow-violet-500/10' 
+        ? 'navbar-glass' 
         : 'bg-transparent'
     }`}>
       <div className="container-custom px-4 sm:px-6 md:px-8">
@@ -65,7 +65,7 @@ export default function Navbar() {
             animate={{ opacity: 1, x: 0 }}
             className="flex items-center space-x-2 sm:space-x-3 md:space-x-4 ml-2 sm:ml-0"
           >
-            <div className="w-20 h-16 rounded-xl flex items-center justify-center overflow-hidden">
+            <div className="w-20 h-16 rounded-xl flex items-center justify-center overflow-hidden shadow-sm">
               <img src="/img/logo.png" alt="SitePrisme" className="w-full h-full object-cover" />
             </div>
           </motion.div>
@@ -79,19 +79,19 @@ export default function Navbar() {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: index * 0.1 }}
                 onClick={() => scrollToSection(item.href, item.id)}
-                className={`relative text-sm xs:text-base sm:text-lg font-medium transition-colors duration-200 ${
+                className={`relative text-sm xs:text-base sm:text-base font-semibold transition-colors duration-300 ${
                   activeSection === item.id
-                    ? 'text-violet-400'
-                    : 'text-slate-300 hover:text-violet-300'
+                    ? 'text-sky-600'
+                    : 'text-slate-700 hover:text-sky-500'
                 }`}
               >
                 {item.name}
                 {activeSection === item.id && (
                   <motion.div
                     layoutId="activeSection"
-                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-violet-400 to-purple-400 rounded-full"
+                    className="absolute -bottom-1 left-0 right-0 h-0.5 bg-gradient-to-r from-sky-500 to-cyan-500 rounded-full"
                     initial={false}
-                    transition={{ type: 'spring', stiffness: 300, damping: 30 }}
+                    transition={{ type: 'spring', stiffness: 380, damping: 35 }}
                   />
                 )}
               </motion.button>
@@ -105,7 +105,7 @@ export default function Navbar() {
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               onClick={() => setIsOpen(!isOpen)}
-              className="md:hidden w-10 h-10 rounded-lg bg-slate-700/50 hover:bg-violet-500/20 text-slate-300 hover:text-violet-300 transition-all duration-200 flex items-center justify-center"
+              className="md:hidden w-10 h-10 rounded-xl bg-white/80 hover:bg-white text-slate-700 hover:text-sky-600 transition-all duration-300 flex items-center justify-center backdrop-blur-md border border-slate-200/50 shadow-sm"
               aria-label="Toggle menu"
             >
               {isOpen ? <X size={20} /> : <Menu size={20} />}
@@ -122,7 +122,7 @@ export default function Navbar() {
             animate={{ opacity: 1, height: 'auto' }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3 }}
-            className="md:hidden bg-slate-900/98 backdrop-blur-lg border-t border-violet-500/20 overflow-hidden"
+            className="md:hidden navbar-glass border-t border-slate-200/50 overflow-hidden"
           >
             <div className="container-custom py-4 px-2 sm:px-4">
               <div className="space-y-1">
@@ -133,10 +133,10 @@ export default function Navbar() {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: index * 0.1 }}
                     onClick={() => scrollToSection(item.href, item.id)}
-                    className={`block w-full text-left px-4 py-3 rounded-lg text-base xs:text-lg font-medium transition-all duration-200 ${
+                    className={`block w-full text-left px-4 py-3 rounded-xl text-base xs:text-lg font-semibold transition-all duration-300 ${
                       activeSection === item.id
-                        ? 'text-violet-400 bg-violet-500/10 border-l-2 border-violet-400'
-                        : 'text-slate-300 hover:text-violet-300 hover:bg-violet-500/5'
+                        ? 'text-sky-600 bg-sky-50 border-l-3 border-sky-500 shadow-sm'
+                        : 'text-slate-700 hover:text-sky-600 hover:bg-white/60'
                     }`}
                   >
                     {item.name}
@@ -149,11 +149,11 @@ export default function Navbar() {
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.5 }}
-                className="mt-6 pt-4 border-t border-violet-500/20"
+                className="mt-6 pt-4 border-t border-slate-200/50"
               >
                 <button
                   onClick={() => scrollToSection('#contact', 'contact')}
-                  className="w-full btn-professional py-3 text-base xs:text-lg"
+                  className="w-full btn-professional py-3.5 text-base xs:text-lg shadow-md"
                 >
                   Démarrer un projet
                 </button>

@@ -147,22 +147,22 @@ export default function ContactForm() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ delay: 0.2 }}
-              className="text-xl text-slate-300 max-w-2xl mx-auto text-readable"
+              className="text-xl text-slate-600 max-w-2xl mx-auto text-readable"
             >
               Partagez-nous vos besoins et nous vous proposerons une solution sur mesure 
               parfaitement adaptée à vos objectifs.
             </motion.p>
           </div>
 
-          {/* Form */}
+          {/* Form Glassmorphism */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.3 }}
           >
-            <form onSubmit={handleSubmit} className="card-professional p-8 space-y-6 relative overflow-hidden">
-              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-400 via-purple-400 to-pink-400"></div>
+            <form onSubmit={handleSubmit} className="card-professional p-8 space-y-6 relative overflow-hidden shadow-sm">
+              <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sky-400/60 via-cyan-500/60 to-sky-600/60"></div>
               
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 {/* Nom */}
@@ -179,7 +179,7 @@ export default function ContactForm() {
                     className={`form-input-professional ${errors.nom ? 'border-red-400 focus:border-red-400' : ''}`}
                   />
                   {errors.nom && (
-                    <p className="text-sm text-red-400 flex items-center">
+                    <p className="text-sm text-red-500 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
                       {errors.nom}
                     </p>
@@ -201,7 +201,7 @@ export default function ContactForm() {
                     className={`form-input-professional ${errors.email ? 'border-red-400 focus:border-red-400' : ''}`}
                   />
                   {errors.email && (
-                    <p className="text-sm text-red-400 flex items-center">
+                    <p className="text-sm text-red-500 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
                       {errors.email}
                     </p>
@@ -222,7 +222,7 @@ export default function ContactForm() {
                     className={`form-input-professional ${errors.telephone ? 'border-red-400 focus:border-red-400' : ''}`}
                   />
                   {errors.telephone && (
-                    <p className="text-sm text-red-400 flex items-center">
+                    <p className="text-sm text-red-500 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
                       {errors.telephone}
                     </p>
@@ -256,16 +256,16 @@ export default function ContactForm() {
                   <SelectTrigger className={`form-input-professional ${errors.typeProjet ? 'border-red-400' : ''}`}>
                     <SelectValue placeholder="Sélectionnez le type de projet" />
                   </SelectTrigger>
-                  <SelectContent className="bg-slate-800/95 border-violet-500/30 backdrop-blur-xl">
+                  <SelectContent className="glass-strong">
                     {typesProjet.map((type) => (
-                      <SelectItem key={type.value} value={type.value} className="text-slate-300 hover:bg-violet-500/20 focus:bg-violet-500/20">
+                                              <SelectItem key={type.value} value={type.value} className="text-slate-700 hover:glass-light focus:glass-light">
                         {type.label}
                       </SelectItem>
                     ))}
                   </SelectContent>
                 </Select>
                 {errors.typeProjet && (
-                  <p className="text-sm text-red-400 flex items-center">
+                  <p className="text-sm text-red-500 flex items-center">
                     <AlertCircle className="w-4 h-4 mr-1" />
                     {errors.typeProjet}
                   </p>
@@ -288,16 +288,16 @@ export default function ContactForm() {
                 />
                 <div className="flex justify-between items-center">
                   {errors.description ? (
-                    <p className="text-sm text-red-400 flex items-center">
+                    <p className="text-sm text-red-500 flex items-center">
                       <AlertCircle className="w-4 h-4 mr-1" />
                       {errors.description}
                     </p>
                   ) : (
-                    <p className="text-sm text-slate-400">
+                    <p className="text-sm text-slate-500">
                       Minimum 20 caractères
                     </p>
                   )}
-                  <span className="text-sm text-slate-400">
+                  <span className="text-sm text-slate-500">
                     {formData.description.length}/500
                   </span>
                 </div>
@@ -323,14 +323,14 @@ export default function ContactForm() {
                   )}
                 </button>
                 
-                <p className="text-sm text-slate-400 text-center mt-4">
+                <p className="text-sm text-slate-500 text-center mt-4">
                   Nous vous recontacterons dans les 24h pour discuter de votre projet.
                 </p>
               </div>
             </form>
           </motion.div>
 
-          {/* Additional Info */}
+          {/* Additional Info Glassmorphism */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
@@ -343,19 +343,19 @@ export default function ContactForm() {
                 title: 'Échange initial',
                 description: 'Discussion de vos besoins et objectifs',
                 icon: MessageSquare,
-                color: 'text-violet-400'
+                color: 'text-slate-600'
               },
               {
                 title: 'Proposition technique',
                 description: 'Solution adaptée avec technologies recommandées',
                 icon: FileText,
-                color: 'text-purple-400'
+                color: 'text-gray-600'
               },
               {
                 title: 'Démarrage projet',
                 description: 'Planning et mise en place de l\'équipe',
                 icon: Rocket,
-                color: 'text-pink-400'
+                color: 'text-slate-700'
               }
             ].map((step, index) => {
               const IconComponent = step.icon
@@ -366,15 +366,15 @@ export default function ContactForm() {
                   whileInView={{ opacity: 1, y: 0 }}
                   viewport={{ once: true }}
                   transition={{ delay: 0.6 + index * 0.1 }}
-                  className="text-center card-professional p-6 hover-lift"
+                  className="text-center card-professional p-6 hover-lift shadow-sm"
                 >
-                  <div className="w-12 h-12 bg-violet-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                  <div className="w-12 h-12 glass-icon rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm">
                     <IconComponent className={`w-6 h-6 ${step.color}`} />
                   </div>
                   <h4 className="font-work-sans font-semibold mb-2 text-foreground">
                     {step.title}
                   </h4>
-                  <p className="text-sm text-slate-400">
+                  <p className="text-sm text-slate-500">
                     {step.description}
                   </p>
                 </motion.div>

@@ -35,12 +35,11 @@ export default function Hero() {
     <section className="relative min-h-screen flex items-center justify-center bg-gradient-main py-12 sm:py-20 md:py-32">
       {/* Background effects */}
       <div className="absolute inset-0 bg-grid-subtle opacity-30 sm:opacity-40" />
-      <div className="absolute inset-0 bg-gradient-to-br from-violet-900/20 via-transparent to-purple-900/20" />
       
-      {/* Floating orbs */}
-      <div className="absolute top-8 left-4 w-40 h-40 sm:top-20 sm:left-20 sm:w-72 sm:h-72 bg-violet-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 sm:opacity-20 animate-pulse"></div>
-      <div className="absolute top-32 right-4 w-40 h-40 sm:top-40 sm:right-20 sm:w-72 sm:h-72 bg-purple-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 sm:opacity-20 animate-pulse animation-delay-2000"></div>
-      <div className="absolute -bottom-8 left-1/2 w-40 h-40 sm:w-72 sm:h-72 bg-indigo-500 rounded-full mix-blend-multiply filter blur-xl opacity-10 sm:opacity-20 animate-pulse animation-delay-4000"></div>
+      {/* Floating glassmorphism orbs */}
+      <div className="absolute top-8 left-4 w-40 h-40 sm:top-20 sm:left-20 sm:w-72 sm:h-72 glass-orb rounded-full animate-pulse"></div>
+      <div className="absolute top-32 right-4 w-40 h-40 sm:top-40 sm:right-20 sm:w-72 sm:h-72 glass-orb rounded-full animate-pulse animation-delay-2000"></div>
+      <div className="absolute -bottom-8 left-1/2 w-40 h-40 sm:w-72 sm:h-72 glass-orb rounded-full animate-pulse animation-delay-4000"></div>
 
       {/* Content */}
       <div className="relative z-10 max-w-xs sm:max-w-2xl md:max-w-4xl lg:max-w-6xl px-2 sm:px-4 md:px-8 text-center mx-auto pt-16">
@@ -49,14 +48,14 @@ export default function Hero() {
           animate={{ opacity: 1 }}
           transition={{ duration: 0.8 }}
         >
-          {/* Badge professionnel */}
+          {/* Badge professionnel glassmorphism */}
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.6 }}
-            className="inline-flex items-center rounded-full border border-violet-400/30 bg-violet-500/10 px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-medium text-violet-300 mb-4 sm:mb-8 backdrop-blur-sm hidden xs:inline-flex"
+            className="inline-flex items-center rounded-full glass-badge px-4 sm:px-6 py-2 sm:py-3 text-xs sm:text-sm font-semibold text-slate-700 mb-4 sm:mb-8 hidden xs:inline-flex shadow-sm"
           >
-            <CheckCircle className="w-4 h-4 mr-2" />
+            <CheckCircle className="w-4 h-4 mr-2 text-sky-500" />
             SitePrisme - Agence de développement web spécialisée
           </motion.div>
 
@@ -73,19 +72,19 @@ export default function Hero() {
           
           <p
             ref={subtitleRef}
-            className="text-base sm:text-xl md:text-2xl text-slate-300 max-w-3xl mx-auto mb-8 text-readable"
+            className="text-base sm:text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto mb-8 text-readable font-normal"
           >
             Nous développons des sites web professionnels et performants avec 
-            <span className="text-violet-300 font-semibold"> React, Shopify et WordPress</span>, 
+            <span className="text-slate-900 font-semibold"> React, Shopify et WordPress</span>, 
             adaptés aux besoins spécifiques de votre entreprise.
           </p>
 
-          {/* Points forts */}
+          {/* Points forts glassmorphism */}
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.6, duration: 0.6 }}
-            className="hidden sm:flex flex-col md:flex-row flex-wrap justify-center gap-2 sm:gap-4 md:gap-6 mb-8 md:mb-10 text-xs sm:text-sm text-slate-400"
+            className="hidden sm:flex flex-col md:flex-row flex-wrap justify-center gap-2 sm:gap-4 md:gap-6 mb-8 md:mb-10 text-xs sm:text-sm text-slate-600"
           >
             {[
               'Développement sur mesure',
@@ -95,13 +94,13 @@ export default function Hero() {
             ].map((feature, index) => (
               <motion.div 
                 key={feature} 
-                className="flex items-center bg-slate-800/30 px-3 sm:px-4 py-1.5 sm:py-2 rounded-full backdrop-blur-sm border border-violet-500/20"
+                className="flex items-center glass-badge px-3 sm:px-4 py-1.5 sm:py-2 rounded-full shadow-sm"
                 initial={{ opacity: 0, x: -20 }}
                 animate={{ opacity: 1, x: 0 }}
                 transition={{ delay: 0.8 + index * 0.1, duration: 0.4 }}
               >
-                <CheckCircle className="w-4 h-4 text-violet-400 mr-2" />
-                <span className="text-slate-300">{feature}</span>
+                <CheckCircle className="w-4 h-4 text-sky-500 mr-2" />
+                <span className="text-slate-700 font-medium">{feature}</span>
               </motion.div>
             ))}
           </motion.div>

@@ -131,7 +131,7 @@ export default function Expertises() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-slate-300 max-w-3xl mx-auto text-readable"
+            className="text-xl text-slate-600 max-w-3xl mx-auto text-readable"
           >
             Nous développons des solutions web spécialisées pour différents secteurs d'activité, 
             avec une expertise technique adaptée à chaque domaine.
@@ -152,28 +152,28 @@ export default function Expertises() {
                 className="expertise-card card-professional p-8 hover-lift group relative overflow-hidden"
               >
                 {/* Gradient accent */}
-                <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r ${expertise.color}`}></div>
+                <div className={`absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sky-400 to-cyan-500 opacity-70`}></div>
                 
                 {/* Header */}
                 <div className="flex items-start justify-between mb-6">
                   <div className="flex items-center space-x-4">
-                    <div className="w-14 h-14 bg-violet-500/20 rounded-xl flex items-center justify-center group-hover:bg-violet-500 group-hover:scale-110 transition-all duration-300">
-                      <IconComponent className="w-7 h-7 text-violet-400 group-hover:text-white transition-colors" />
+                    <div className="w-14 h-14 glass-icon rounded-xl flex items-center justify-center group-hover:scale-110 transition-all duration-300 shadow-sm">
+                      <IconComponent className="w-7 h-7 text-sky-600 group-hover:text-sky-700 transition-colors" />
                     </div>
                     <div>
                       <h3 className="text-xl font-work-sans font-semibold text-foreground">
                         {expertise.title}
                       </h3>
-                      <p className="text-violet-300 text-sm font-medium">
+                      <p className="text-slate-600 text-sm font-medium">
                         {expertise.subtitle}
                       </p>
                     </div>
                   </div>
-                  <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-violet-400 group-hover:translate-x-1 transition-all duration-300" />
+                  <ArrowRight className="w-5 h-5 text-slate-400 group-hover:text-sky-500 group-hover:translate-x-1 transition-all duration-300" />
                 </div>
 
                 {/* Description */}
-                <p className="text-slate-300 mb-6 leading-relaxed text-sm">
+                <p className="text-slate-600 mb-6 leading-relaxed text-sm">
                   {expertise.description}
                 </p>
 
@@ -186,9 +186,9 @@ export default function Expertises() {
                     {expertise.features.map((feature) => (
                       <div
                         key={feature}
-                        className="flex items-center text-xs text-slate-400"
+                        className="flex items-center text-xs text-slate-600"
                       >
-                        <CheckCircle className="w-3 h-3 text-violet-400 mr-2 flex-shrink-0" />
+                        <CheckCircle className="w-3 h-3 text-sky-500 mr-2 flex-shrink-0" />
                         {feature}
                       </div>
                     ))}
@@ -204,7 +204,7 @@ export default function Expertises() {
                     {expertise.technologies.map((tech) => (
                       <span
                         key={tech}
-                        className="px-3 py-1 bg-slate-700/50 text-slate-300 rounded-full text-xs font-medium hover:bg-violet-500/20 hover:text-violet-300 transition-colors duration-200 border border-slate-600/50"
+                        className="px-3 py-1 glass-light text-slate-700 rounded-full text-xs font-medium hover:text-slate-900 transition-colors duration-200 shadow-sm"
                       >
                         {tech}
                       </span>
@@ -228,19 +228,19 @@ export default function Expertises() {
               icon: Zap,
               title: 'Performance optimisée',
               description: 'Sites rapides et bien référencés pour une expérience utilisateur optimale',
-              color: 'text-yellow-400'
+              color: 'text-yellow-600'
             },
             {
               icon: Shield,
               title: 'Sécurité renforcée',
               description: 'Protection des données clients et transactions sécurisées',
-              color: 'text-green-400'
+              color: 'text-green-600'
             },
             {
               icon: Users,
               title: 'Support continu',
               description: 'Accompagnement technique et maintenance évolutive',
-              color: 'text-blue-400'
+              color: 'text-blue-600'
             }
           ].map((value, index) => {
             const IconComponent = value.icon
@@ -253,13 +253,13 @@ export default function Expertises() {
                 transition={{ delay: index * 0.1 }}
                 className="text-center card-professional p-6 hover-lift"
               >
-                <div className="w-12 h-12 bg-violet-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
+                <div className="w-12 h-12 glass-icon rounded-xl flex items-center justify-center mx-auto mb-4">
                   <IconComponent className={`w-6 h-6 ${value.color}`} />
                 </div>
                 <h3 className="font-work-sans font-semibold mb-2 text-foreground">
                   {value.title}
                 </h3>
-                <p className="text-sm text-slate-400">
+                <p className="text-sm text-slate-500">
                   {value.description}
                 </p>
               </motion.div>
@@ -276,13 +276,13 @@ export default function Expertises() {
           className="text-center mt-12"
         >
           <div className="card-professional p-8 max-w-2xl mx-auto">
-            <div className="w-12 h-12 bg-violet-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <MessageSquare className="w-6 h-6 text-violet-400" />
+            <div className="w-12 h-12 glass-icon rounded-xl flex items-center justify-center mx-auto mb-4">
+              <MessageSquare className="w-6 h-6 text-slate-600" />
             </div>
             <h3 className="text-xl font-work-sans font-semibold mb-4 text-foreground">
               Votre secteur ne figure pas dans la liste ?
             </h3>
-            <p className="text-slate-300 mb-6">
+            <p className="text-slate-600 mb-6">
               Nous adaptons nos solutions à tous types d'activités. 
               Parlons de vos besoins spécifiques.
             </p>

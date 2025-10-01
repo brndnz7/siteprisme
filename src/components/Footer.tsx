@@ -32,9 +32,9 @@ export default function Footer() {
   }
 
   const socialLinks = [
-    { name: 'Facebook', icon: Facebook, href: '#', color: 'hover:text-blue-400' },
-    { name: 'Twitter', icon: Twitter, href: '#', color: 'hover:text-sky-400' },
-    { name: 'LinkedIn', icon: Linkedin, href: '#', color: 'hover:text-blue-500' }
+    { name: 'Facebook', icon: Facebook, href: '#', color: 'hover:text-blue-500' },
+    { name: 'Twitter', icon: Twitter, href: '#', color: 'hover:text-sky-500' },
+    { name: 'LinkedIn', icon: Linkedin, href: '#', color: 'hover:text-blue-600' }
   ]
 
   const contactInfo = [
@@ -44,7 +44,7 @@ export default function Footer() {
   ]
 
   return (
-    <footer className="bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-slate-300">
+    <footer className="bg-gradient-to-br from-slate-50 via-slate-100 to-slate-50 text-slate-700 border-t border-slate-200">
       {/* Main Footer */}
       <div className="container-custom pt-16 pb-8">
         {/* Top Section */}
@@ -57,11 +57,11 @@ export default function Footer() {
             className="lg:col-span-1"
           >
             <div className="mb-6">
-              <h3 className="text-2xl font-work-sans font-bold text-white mb-3">
+              <h3 className="text-2xl font-work-sans font-bold text-slate-900 mb-3">
                 SitePrisme
               </h3>
-              <p className="text-slate-400 leading-relaxed mb-6">
-                Nous créons des expériences digitales exceptionnelles qui transforment 
+              <p className="text-slate-600 leading-relaxed mb-6">
+                Nous créons des expériences digitales exceptionnelles qui transforment
                 vos idées en solutions performantes et sur mesure.
               </p>
             </div>
@@ -78,9 +78,9 @@ export default function Footer() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: index * 0.1 }}
-                    className="flex items-center text-slate-400 hover:text-violet-300 transition-colors duration-200 group"
+                    className="flex items-center text-slate-600 hover:text-sky-600 transition-colors duration-200 group"
                   >
-                    <div className="w-5 h-5 mr-3 text-violet-400 group-hover:text-violet-300 transition-colors">
+                    <div className="w-5 h-5 mr-3 text-sky-500 group-hover:text-sky-600 transition-colors">
                       <IconComponent size={20} />
                     </div>
                     {contact.text}
@@ -97,7 +97,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.1 }}
           >
-            <h4 className="text-lg font-work-sans font-semibold text-white mb-4">
+            <h4 className="text-lg font-work-sans font-semibold text-slate-900 mb-4">
               Services
             </h4>
             <ul className="space-y-3">
@@ -111,7 +111,7 @@ export default function Footer() {
                 >
                   <a
                     href={link.href}
-                    className="text-slate-400 hover:text-violet-300 transition-colors duration-200 flex items-center group"
+                    className="text-slate-600 hover:text-sky-600 transition-colors duration-200 flex items-center group"
                   >
                     {link.name}
                     <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -128,7 +128,7 @@ export default function Footer() {
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
           >
-            <h4 className="text-lg font-work-sans font-semibold text-white mb-4">
+            <h4 className="text-lg font-work-sans font-semibold text-slate-900 mb-4">
               Entreprise
             </h4>
             <ul className="space-y-3">
@@ -142,7 +142,7 @@ export default function Footer() {
                 >
                   <a
                     href={link.href}
-                    className="text-slate-400 hover:text-violet-300 transition-colors duration-200 flex items-center group"
+                    className="text-slate-600 hover:text-sky-600 transition-colors duration-200 flex items-center group"
                   >
                     {link.name}
                     <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
@@ -173,7 +173,7 @@ export default function Footer() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.5 + index * 0.1 }}
-                    className={`w-10 h-10 bg-slate-700/50 rounded-lg flex items-center justify-center text-slate-400 ${social.color} transition-all duration-200 hover:bg-violet-500/20 hover:scale-110`}
+                    className={`w-10 h-10 bg-white/60 rounded-lg flex items-center justify-center text-slate-600 ${social.color} transition-all duration-200 hover:bg-sky-500/10 hover:scale-110 shadow-sm border border-slate-200/50`}
                     aria-label={social.name}
                   >
                     <IconComponent size={20} />
@@ -182,7 +182,7 @@ export default function Footer() {
               })}
             </div>
 
-            <div className="flex flex-col md:flex-row items-center gap-4 text-sm text-slate-400">
+            <div className="flex flex-col md:flex-row items-center gap-4 text-sm text-slate-500">
               <p>&copy; {currentYear} SitePrisme. Tous droits réservés.</p>
             </div>
           </div>

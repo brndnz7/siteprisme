@@ -20,7 +20,7 @@ const processSteps = [
       'Définition des objectifs',
       'Stratégie UX/UI'
     ],
-    color: 'from-violet-400 to-purple-400'
+    color: 'from-slate-500 to-gray-600'
   },
   {
     id: 2,
@@ -33,7 +33,7 @@ const processSteps = [
       'Maquettes interactives',
       'Tests utilisateurs'
     ],
-    color: 'from-purple-400 to-pink-400'
+    color: 'from-gray-500 to-slate-600'
   },
   {
     id: 3,
@@ -46,7 +46,7 @@ const processSteps = [
       'Responsive design',
       'SEO technique'
     ],
-    color: 'from-indigo-400 to-blue-400'
+    color: 'from-slate-600 to-gray-700'
   },
   {
     id: 4,
@@ -59,7 +59,7 @@ const processSteps = [
       'Monitoring performance',
       'Support technique'
     ],
-    color: 'from-emerald-400 to-teal-400'
+    color: 'from-gray-600 to-slate-700'
   }
 ]
 
@@ -84,7 +84,7 @@ export default function Process() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-slate-300 max-w-3xl mx-auto text-readable"
+            className="text-xl text-slate-600 max-w-3xl mx-auto text-readable"
           >
             Une méthodologie éprouvée pour transformer vos idées en solutions digitales performantes, 
             en respectant vos délais et votre budget.
@@ -114,18 +114,18 @@ export default function Process() {
                     <div className="absolute inset-0 bg-white/10 backdrop-blur-sm rounded-2xl"></div>
                     <IconComponent className="w-8 h-8 sm:w-10 sm:h-10 text-white relative z-10" />
                   </div>
-                  <div className="absolute -top-2 -right-2 w-7 h-7 sm:w-8 sm:h-8 bg-slate-700 text-violet-300 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold border-2 border-violet-400">
+                  <div className="absolute -top-2 -right-2 w-7 h-7 sm:w-8 sm:h-8 bg-white text-slate-900 rounded-full flex items-center justify-center text-xs sm:text-sm font-bold border-2 border-sky-200 shadow-sm">
                     {step.id}
                   </div>
                   
                   {/* Connecting line */}
                   {index < processSteps.length - 1 && (
-                    <div className="hidden lg:block absolute top-20 sm:top-24 left-1/2 w-px h-16 lg:h-24 bg-gradient-to-b from-violet-400/50 to-transparent transform -translate-x-1/2"></div>
+                    <div className="hidden lg:block absolute top-20 sm:top-24 left-1/2 w-px h-16 lg:h-24 bg-gradient-to-b from-slate-400/50 to-transparent transform -translate-x-1/2"></div>
                   )}
                 </div>
 
                 {/* Step Content */}
-                <div className="flex-1 card-professional p-6 lg:p-8 hover-lift w-full max-w-lg lg:max-w-none">
+                <div className="flex-1 card-professional p-6 lg:p-8 hover-lift w-full max-w-lg lg:max-w-none shadow-sm">
                   <div className="text-center lg:text-left">
                     <div className={`inline-block px-3 py-1 rounded-full text-xs font-medium mb-4 bg-gradient-to-r ${step.color} text-white`}>
                       Étape {step.id}
@@ -134,7 +134,7 @@ export default function Process() {
                     <h3 className="text-xl sm:text-2xl font-work-sans font-bold mb-4 text-foreground">
                       {step.title}
                     </h3>
-                    <p className="text-slate-300 mb-6 leading-relaxed text-sm sm:text-base">
+                    <p className="text-slate-600 mb-6 leading-relaxed text-sm sm:text-base">
                       {step.description}
                     </p>
                     
@@ -147,9 +147,9 @@ export default function Process() {
                           whileInView={{ opacity: 1 }}
                           viewport={{ once: true }}
                           transition={{ delay: (index * 0.1) + (detailIndex * 0.1) }}
-                          className="flex items-center text-xs sm:text-sm text-slate-400 bg-slate-700/30 px-3 py-2 rounded-lg w-full max-w-xs lg:max-w-none"
+                          className="flex items-center text-xs sm:text-sm text-slate-600 glass-light px-3 py-2 rounded-lg w-full max-w-xs lg:max-w-none shadow-sm"
                         >
-                          <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-violet-400 mr-2 sm:mr-3 flex-shrink-0" />
+                          <CheckCircle className="w-3 h-3 sm:w-4 sm:h-4 text-slate-600 mr-2 sm:mr-3 flex-shrink-0" />
                           {detail}
                         </motion.div>
                       ))}
@@ -169,16 +169,16 @@ export default function Process() {
           transition={{ delay: 0.4 }}
           className="text-center"
         >
-          <div className="card-professional p-6 lg:p-8 max-w-2xl mx-auto relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-violet-400 via-purple-400 to-pink-400"></div>
+          <div className="card-professional p-6 lg:p-8 max-w-2xl mx-auto relative overflow-hidden shadow-sm">
+            <div className="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-sky-400 via-cyan-500 to-sky-600"></div>
             
-            <div className="w-10 h-10 sm:w-12 sm:h-12 bg-violet-500/20 rounded-xl flex items-center justify-center mx-auto mb-4">
-              <Rocket className="w-5 h-5 sm:w-6 sm:h-6 text-violet-400" />
+            <div className="w-10 h-10 sm:w-12 sm:h-12 glass-icon rounded-xl flex items-center justify-center mx-auto mb-4 shadow-sm">
+              <Rocket className="w-5 h-5 sm:w-6 sm:h-6 text-sky-600" />
             </div>
             <h3 className="text-lg sm:text-xl font-work-sans font-semibold mb-4 text-foreground">
               Prêt à démarrer votre projet ?
             </h3>
-            <p className="text-slate-300 mb-6 text-sm sm:text-base">
+            <p className="text-slate-600 mb-6 text-sm sm:text-base">
               Discutons de vos besoins et voyons comment notre processus peut s'adapter 
               à vos objectifs spécifiques.
             </p>

@@ -95,14 +95,14 @@ export default function Portfolio() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ delay: 0.2 }}
-            className="text-xl text-slate-300 max-w-3xl mx-auto text-readable"
+            className="text-xl text-slate-600 max-w-3xl mx-auto text-readable"
           >
             Découvrez une sélection de nos projets les plus récents, 
             alliant design moderne et performances techniques.
           </motion.p>
         </div>
 
-        {/* Filter Buttons */}
+        {/* Filter Buttons Glassmorphism */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -114,10 +114,10 @@ export default function Portfolio() {
             <button
               key={category.name}
               onClick={() => handleCategoryChange(category.name)}
-              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center ${
-                selectedCategory === category.name 
-                  ? 'bg-violet-500 text-white shadow-lg shadow-violet-500/25' 
-                  : 'bg-slate-700/50 text-slate-300 hover:bg-violet-500/20 hover:text-violet-300 border border-slate-600/50'
+              className={`px-6 py-3 rounded-full font-medium transition-all duration-300 flex items-center backdrop-blur-lg shadow-sm ${
+                selectedCategory === category.name
+                  ? 'bg-sky-500/90 text-white shadow-lg border border-sky-400/30'
+                  : 'bg-white/60 text-slate-700 hover:bg-white/80 hover:text-sky-600 border border-slate-200/50'
               }`}
             >
               {(() => {
@@ -129,22 +129,21 @@ export default function Portfolio() {
           ))}
         </motion.div>
 
-        {/* E-commerce Stack Toggle */}
+        {/* E-commerce Stack Toggle Glassmorphism */}
         {selectedCategory === 'E-commerce' && (
           <motion.div
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             className="flex justify-center mb-8"
           >
-            <div className="flex flex-col md:flex-row bg-slate-800/70 rounded-full p-3 border border-violet-700/30 shadow-lg gap-3 md:gap-4 items-center min-w-[320px] sm:min-w-[400px]">
+            <div className="flex flex-col md:flex-row glass-medium rounded-full p-3 shadow-lg gap-3 md:gap-4 items-center min-w-[320px] sm:min-w-[400px]">
               <button
                 onClick={() => setEcommerceStack('shopify')}
                 className={`px-6 py-3 w-full md:min-w-[160px] lg:min-w-[180px] rounded-full font-semibold text-sm sm:text-base flex items-center justify-center transition-all duration-300 relative overflow-hidden
                   ${ecommerceStack === 'shopify'
-                    ? 'bg-gradient-to-r from-violet-500 to-purple-500 text-white shadow-xl scale-105 z-10'
-                    : 'bg-transparent text-violet-300 hover:bg-violet-500/10 hover:text-white'}
+                    ? 'bg-sky-500/90 text-white shadow-xl scale-105 z-10 border border-sky-400/30'
+                    : 'bg-transparent text-slate-700 hover:bg-white/60 hover:text-sky-600'}
                 `}
-                style={{ boxShadow: ecommerceStack === 'shopify' ? '0 4px 24px 0 rgba(139,92,246,0.25)' : undefined }}
               >
                 <Store className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
                 Shopify
@@ -153,10 +152,9 @@ export default function Portfolio() {
                 onClick={() => setEcommerceStack('wordpress')}
                 className={`px-6 py-3 w-full md:min-w-[160px] lg:min-w-[180px] rounded-full font-semibold text-sm sm:text-base flex items-center justify-center transition-all duration-300 relative overflow-hidden
                   ${ecommerceStack === 'wordpress'
-                    ? 'bg-gradient-to-r from-violet-500 to-purple-500 text-white shadow-xl scale-105 z-10'
-                    : 'bg-transparent text-violet-300 hover:bg-violet-500/10 hover:text-white'}
+                    ? 'bg-sky-500/90 text-white shadow-xl scale-105 z-10 border border-sky-400/30'
+                    : 'bg-transparent text-slate-700 hover:bg-white/60 hover:text-sky-600'}
                 `}
-                style={{ boxShadow: ecommerceStack === 'wordpress' ? '0 4px 24px 0 rgba(139,92,246,0.25)' : undefined }}
               >
                 <Store className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3" />
                 WordPress
@@ -180,7 +178,7 @@ export default function Portfolio() {
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.8 }}
                 transition={{ duration: 0.3, delay: index * 0.1 }}
-                className="project-card card-professional p-0 overflow-hidden hover-lift group w-full max-w-sm lg:max-w-2xl xl:max-w-2xl 2xl:max-w-xl"
+                className="project-card card-professional p-0 overflow-hidden hover-lift group w-full max-w-sm lg:max-w-2xl xl:max-w-2xl 2xl:max-w-xl shadow-sm"
               >
                 {/* Image */}
                 <div className="relative h-48 sm:h-56 md:h-64 lg:h-96 xl:h-[28rem] 2xl:h-96 overflow-hidden">
@@ -197,7 +195,7 @@ export default function Portfolio() {
                           href={project.url} 
                           target="_blank" 
                           rel="noopener noreferrer"
-                          className="bg-violet-500 hover:bg-violet-600 text-white px-4 py-2 rounded-lg text-sm font-medium transition-colors duration-200"
+                          className="glass-button text-slate-700 hover:text-sky-600 px-4 py-2 rounded-lg text-sm font-medium shadow-sm"
                           onClick={(e) => e.stopPropagation()}
                         >
                           <ExternalLink className="w-4 h-4 mr-2 inline" />
@@ -211,23 +209,23 @@ export default function Portfolio() {
                 {/* Content */}
                 <div className="p-4 sm:p-6 lg:p-8 xl:p-10 text-center">
                   <div className="flex flex-col items-center justify-center mb-3 gap-2">
-                    <span className="text-xs sm:text-xs font-medium text-violet-300 bg-violet-500/20 px-3 py-1 rounded-full border border-violet-500/30 flex items-center justify-center">
+                    <span className="text-xs sm:text-xs font-medium text-slate-700 glass-badge px-3 py-1 rounded-full flex items-center justify-center shadow-sm">
                       {(() => {
                         const IconComponent = getCategoryIcon(project.category)
-                        return <IconComponent className="w-4 h-4 mr-2" />
+                        return <IconComponent className="w-4 h-4 mr-2 text-sky-500" />
                       })()}
                       {getCategoryName(project.category)}
                     </span>
-                    <span className="text-xs text-slate-400">
+                    <span className="text-xs text-slate-500">
                       {project.year}
                     </span>
                   </div>
                   
-                  <h3 className="text-base sm:text-lg font-work-sans font-semibold text-foreground mb-2 group-hover:text-violet-300 transition-colors text-center">
+                  <h3 className="text-base sm:text-lg font-work-sans font-semibold text-foreground mb-2 group-hover:text-slate-700 transition-colors text-center">
                     {project.title}
                   </h3>
                   
-                  <p className="text-xs sm:text-sm text-slate-400 mb-4 leading-relaxed text-center">
+                  <p className="text-xs sm:text-sm text-slate-500 mb-4 leading-relaxed text-center">
                     {project.description}
                   </p>
                   
@@ -235,13 +233,13 @@ export default function Portfolio() {
                     {project.technologies.slice(0, 5).map((tech) => (
                       <span
                         key={tech}
-                        className="text-xs px-2 py-1 bg-slate-700/50 text-slate-300 rounded-md border border-slate-600/50"
+                        className="text-xs px-2 py-1 glass-light text-slate-700 rounded-md shadow-sm"
                       >
                         {tech}
                       </span>
                     ))}
                     {project.technologies.length > 5 && (
-                      <span className="text-xs px-2 py-1 bg-slate-700/50 text-slate-300 rounded-md border border-slate-600/50">
+                      <span className="text-xs px-2 py-1 bg-white/60 text-slate-700 rounded-md border border-slate-200/50 backdrop-blur-sm shadow-sm">
                         +{project.technologies.length - 5}
                       </span>
                     )}
@@ -253,14 +251,14 @@ export default function Portfolio() {
         </motion.div>
       </div>
 
-      {/* Modal */}
+      {/* Modal Glassmorphism */}
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
-        <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-y-auto bg-slate-800/95 border-violet-500/30 backdrop-blur-xl">
+        <DialogContent className="max-w-4xl w-full max-h-[90vh] overflow-y-auto glass-strong shadow-2xl">
           {selectedProject && (
             <div className="space-y-6">
               <button
                 onClick={closeModal}
-                className="absolute top-4 right-4 p-2 rounded-full bg-slate-700/50 hover:bg-slate-600/50 transition-colors text-slate-300 hover:text-white"
+                                  className="absolute top-4 right-4 p-2 rounded-full glass-button text-slate-700 hover:text-sky-600 shadow-sm"
               >
                 <X className="w-5 h-5" />
               </button>
@@ -276,14 +274,14 @@ export default function Portfolio() {
 
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
-                    <span className="text-sm font-medium text-violet-300 bg-violet-500/20 px-3 py-1 rounded-full border border-violet-500/30 flex items-center">
+                    <span className="text-sm font-medium text-slate-700 glass-badge px-3 py-1 rounded-full flex items-center backdrop-blur-md shadow-sm">
                       {(() => {
                         const IconComponent = getCategoryIcon(selectedProject.category)
-                        return <IconComponent className="w-4 h-4 mr-2" />
+                        return <IconComponent className="w-4 h-4 mr-2 text-sky-500" />
                       })()}
                       {getCategoryName(selectedProject.category)}
                     </span>
-                    <span className="text-sm text-slate-400">
+                    <span className="text-sm text-slate-500">
                       {selectedProject.year}
                     </span>
                   </div>
@@ -292,7 +290,7 @@ export default function Portfolio() {
                     {selectedProject.title}
                   </h3>
 
-                  <p className="text-slate-300 leading-relaxed">
+                  <p className="text-slate-600 leading-relaxed">
                     {selectedProject.description}
                   </p>
 
@@ -304,7 +302,7 @@ export default function Portfolio() {
                       {selectedProject.technologies.map((tech: string) => (
                         <span
                           key={tech}
-                          className="text-sm px-3 py-1 bg-slate-700/50 text-slate-300 rounded-md border border-slate-600/50"
+                          className="text-sm px-3 py-1 glass-light text-slate-700 rounded-md backdrop-blur-sm shadow-sm"
                         >
                           {tech}
                         </span>
